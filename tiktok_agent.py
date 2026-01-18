@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 # Agente Automatizado TikTok - Monitoramento de Comentários
 # Autor: Sistema de Automação
 # Data: 2026
 
 import time
+import sys
 import random
 import logging
 from selenium import webdriver
@@ -22,6 +24,10 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Configurar stdout para UTF-8 no Windows
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 class TikTokAgent:
     def __init__(self, headless=False):
